@@ -1,0 +1,66 @@
+.ListSites
+	padding-bottom: 10px
+	&__row
+		display: flex
+		width: 100%
+		&_1
+			justify-content: space-between
+			margin-bottom: 5px
+		&_2
+			flex-direction: column
+			align-items: center
+		&_3
+			justify-content: flex-end
+	&__list
+		display: flex
+		flex-wrap: wrap
+		border-right: 1px solid $color-1
+		border-bottom: 1px solid $color-1
+	&__item
+		width: 20%
+		display: flex
+		flex-direction: column
+		border-left: 1px solid $color-1
+		border-top: 1px solid $color-1
+		box-sizing: border-box
+		padding: 10px
+		&.hidden
+			display: none
+	&__link
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__img
+		width: 150px
+		height: 50px
+		padding: 5px 0
+	&__name
+		width: 100%
+		text-align: center
+	&__edit-panel
+		width: 100%
+		display: flex
+		justify-content: space-between
+		border: 1px solid $color-1
+		padding: 3px
+	&__edit-item
+		cursor: pointer
+	&__item-fill
+		border-top: 1px solid $color-1
+		border-left: 1px solid $color-1
+		flex-grow: 1
+
+@media #{$tablet}
+	.ListSites
+		&__item
+			width: 25%
+
+@media #{$phone}
+	.ListSites
+		&__item
+			width: 50%
+
+@media #{$phone-min}
+	.ListSites
+		&__item
+			width: 100%

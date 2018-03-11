@@ -1,0 +1,45 @@
+.AddSite
+	margin: 0 auto
+	max-width: 400px
+	display: flex
+	justify-content: center
+	flex-direction: column
+	text-align: center
+	&__label,
+	&__select,
+	&__input,
+	&__textarea_comment
+		width: 100%
+		text-transform: uppercase
+	&__textarea_comment
+		height: 80px
+	&__select
+		padding: 5px
+		box-sizing: border-box
+	&__label
+		display: block
+		margin: 5px 0
+	&__btn-send
+		width: 100%
+		display: inline-block
+		padding: 13px 0
+		text-transform: uppercase
+		background-color: $color-5
+		color: #fff
+		margin: 20px 0
+		text-align: center
+		border: 0
+	&__box_ulogin
+		margin-bottom: 20px
+	&__text_ulogin
+		margin: 10px 0
+		font-size: 18px
+		text-transform: uppercase
+	&__select_subsection .AddSite__option_item,
+	&__select_type .AddSite__option_item
+		display: none
+	&__select_subsection .AddSite__option_item.active,
+	&__select_type .AddSite__option_item.active
+		display: block
+	&__notice-site_error
+		display: none

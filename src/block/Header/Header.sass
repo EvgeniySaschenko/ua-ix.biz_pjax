@@ -1,0 +1,24 @@
+.Header
+	padding-top: 10px
+	position: relative
+	.container
+		border-radius: 5px 5px 0 0
+		background-color: $color-2
+	&__row
+		width: 100%
+		display: flex
+		justify-content: space-between
+		padding: 10px 0 40px
+
+@media #{$pc}
+	.Header
+		padding-top: 0
+		.container
+			border-radius: 0
+
+@media #{$phone}
+	.Header
+		&__row
+			flex-direction: column
+			align-items: center
+			padding-bottom: 10px

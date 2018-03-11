@@ -1,0 +1,83 @@
+.CheckSites
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__item
+		width: 100%
+		max-width: 500px
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin: 20px 0
+		border-bottom: 1px solid $color-1
+		text-align: center
+		&.hidden
+			display: none
+	&__comment
+		margin: 10px 0
+	&__img
+		height: 50px
+		width: 150px
+
+.CheckSitesForm
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__label,
+	&__select,
+	&__input,
+		width: 100%
+		text-transform: uppercase
+	&__select
+		padding: 5px
+		box-sizing: border-box
+	&__label
+		display: block
+		margin: 5px 0
+	&__btn-send
+		width: 100%
+		display: inline-block
+		padding: 13px 0
+		text-transform: uppercase
+		background-color: $color-5
+		color: #fff
+		margin: 20px 0
+		text-align: center
+		border: 0
+	&__name-section
+		line-height: 2
+		font-weight: bold
+		text-transform: uppercase
+	&__status
+		display: flex
+		justify-content: flex-start
+	input
+		margin: 10px
+		width: 100%
+
+
+.CheckSites
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__item
+		width: 100%
+		max-width: 500px
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin: 20px 0
+		border-bottom: 1px solid $color-1
+		text-align: center
+		&.hidden
+			display: none
+	&__comment
+		margin: 10px 0
+	&__img
+		height: 50px
+		width: 150px
+
+@media #{$phone}
+	.CheckSitesForm
+		&__status
+			flex-direction: column

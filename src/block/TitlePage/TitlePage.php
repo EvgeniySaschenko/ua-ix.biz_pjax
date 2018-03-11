@@ -1,0 +1,1 @@
+<h1 class="TitlePage"> <?= $currentSection['title']; ?> </h1>

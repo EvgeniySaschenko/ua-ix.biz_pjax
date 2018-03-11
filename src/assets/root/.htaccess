@@ -1,0 +1,28 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+
+<IfModule mod_rewrite.c>
+  RewriteBase /
+
+	RewriteCond %{HTTP_HOST} ^react.ua-ix\.biz$ [NC]
+	RewriteRule ^$ http://react.ua-ix.biz/ru/file [R=301,L]
+	
+  RewriteCond %{QUERY_STRING} ^section=file$
+  RewriteRule ^index\.php$ ru/file? [R=301,L]
+	
+  RewriteCond %{QUERY_STRING} ^section=torrent$
+  RewriteRule ^index\.php$ ru/torrent? [R=301,L]
+	RewriteRule ^torrents.php$ /ru/torrent? [L,R=301]
+	
+  RewriteCond %{QUERY_STRING} ^section=news$
+  RewriteRule ^index\.php$ ru/news? [R=301,L]
+	RewriteRule ^news_site.php$ /ru/news? [L,R=301]
+  
+  RewriteCond %{QUERY_STRING} ^section=news$
+  RewriteRule ^index\.php$ ru/news? [R=301,L]
+	RewriteRule ^social_site.php$ /error? [L,R=410]
+  
+</IfModule>
+RewriteCond %{REQUEST_URI} !^/controller/.*
+RewriteCond %{REQUEST_URI} !^/geobaza/.*
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
