@@ -1,8 +1,17 @@
 .Advertising
 	padding: 10px
-.AdvertisingBottom
 	display: flex
 	justify-content: center
+	&__left,
+	&__right
+		width: 50%
+
+@media #{$tablet}
+	.Advertising
+		&__left
+			display: none
+		&__right
+			width: 100%
 
 @media #{$phone}
 	.Advertising

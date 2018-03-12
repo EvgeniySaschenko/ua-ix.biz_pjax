@@ -9,13 +9,6 @@
 	<meta name="keywords" content="<?= $currentSection['meta_k']; ?>">
 	<title><?= $currentSection['title']; ?></title>
 	<base href="/">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-9443227048807585",
-			enable_page_level_ads: true
-		});
-	</script>
 </head>
 <body>
 	<? include('view/Preloader.php'); ?>
@@ -25,11 +18,11 @@
 		</script>
 		<? include('view/Header.php'); ?>
 
-		<div class="container">
+		<div class="container" id="content">
 			<? if( $_SESSION['user']['permission'] == 1 ): ?>
 				<a class="" href="/ru/check-sites">Сайты на проверке</a>
 			<? endif; ?>
-			<? //include('view/AdvertisingTop.php'); ?>
+			<? include('view/AdvertisingTop.php'); ?>
 			<main class="main" id="main">
 				<? include('view/TitlePage.php'); ?>
 
@@ -53,11 +46,11 @@
 		<? include('view/Footer.php'); ?>
 		<? include('view/ModalLogin.php'); ?>
 	</div>
-	<link rel="stylesheet" href="/css/style.css?1">
+	<link rel="stylesheet" href="/css/style.css?7">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-	<script src="/js/app.js?1"></script>
+	<script src="/js/app.js?9"></script>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">
@@ -101,22 +94,5 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-63941418-1');
 	</script>
-
-	<!-- actionteaser.ru -->
-	<script language="Javascript">
-	var bid = '93zklbU7UT16ey480drY';
-	var sid = '10561';
-	var async = 1;
-	</script>
-	<script type="text/javascript" src="http://v4.actionteaser.ru/news.js"></script>
-
-	<!-- actionteaser.ru -->
-	<script language="Javascript">
-	var bid = 'l64o22Z8I7z2m1UF77V5';
-	var sid = '10561';
-	var async = 1;
-	</script>
-	<script type="text/javascript" src="http://v4.actionteaser.ru/news.js"></script>
-
 </body>
 </html>

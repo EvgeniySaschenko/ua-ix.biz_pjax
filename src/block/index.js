@@ -1,14 +1,6 @@
 (function() {
-	$(document).pjax('a:not(.no_pjax)', '#main', {
-		fragment: '#main',
+	$(document).pjax('a:not(.no_pjax)', '#content', {
+		fragment: '#content',
 		timeout: 150000
-	});
-
-	$(document).on('pjax:start', function(){
-		$('.Preloader').addClass('transition');
-	});
-
-	$(document).on('pjax:end', function(){
-		$('.Preloader').removeClass('transition');
 	});
 }).call();
