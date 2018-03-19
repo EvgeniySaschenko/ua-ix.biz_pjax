@@ -5,11 +5,13 @@ const stylus = require('gulp-stylus');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const data = require('gulp-data');
+const plumber = require('gulp-plumber');
 const fs = require('fs');
 const spritesmith = require('gulp.spritesmith');
 const gulpIf = require('gulp-if');
 const csso = require('gulp-csso');
 const uglify = require('gulp-uglify');
+const minify = require('gulp-minify');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
@@ -18,6 +20,7 @@ const svgSprites = require('gulp-svg-sprites');
 const ftp = require('gulp-ftp');
 const rename = require('gulp-rename');
 
+const isProduction= process.env.NODE_ENV ? true : false;
 
 gulp.task('serve', ['pug', 'sass', 'js', 'copy', 'sprite-svg'], () => {
 /*	browserSync.init({
@@ -52,13 +55,12 @@ gulp.task('pug', () => {
 gulp.task('sass', () => {
 	setTimeout( () => {
 		return gulp.src('src/assets/style.sass')
-		.pipe(sass({outputStyle: 'compressed'}).on( 'error', ( error ) => {
-			console.log( error );
-		}))
-		//.pipe(sourcemaps.init())
-		.pipe(autoprefixer())
-		.pipe(csso())
-		//.pipe(sourcemaps.write())
+			.pipe(plumber())
+			.pipe(sass())
+			.pipe(gulpIf( !isProduction, sourcemaps.init() ))
+			.pipe(autoprefixer())
+			.pipe(gulpIf( isProduction, csso() ))
+			.pipe(gulpIf( !isProduction, sourcemaps.write() ))
 		.pipe(gulp.dest('build/css/'));
 	},500 );
 });
@@ -66,9 +68,16 @@ gulp.task('sass', () => {
 // JS
 gulp.task('js', () => {
 	return gulp.src('src/block/**/*.js')
-	//.pipe(sourcemaps.init())
+		.pipe(babel({presets: ['es2015']}))
+		.pipe(gulpIf( !isProduction, sourcemaps.init() ))
 		.pipe(concat('app.js'))
-	//.pipe(sourcemaps.write())
+		.pipe(gulpIf( isProduction, minify({ext : {
+					src : '-debug.js',
+					min : '.js'
+				}
+			})
+		))
+		.pipe(gulpIf( !isProduction, sourcemaps.write() ))
 	.pipe(gulp.dest('build/js/'));
 });
 
