@@ -1,5 +1,3 @@
 <div class="AdvertisingTop Advertising">
-	<div id="ca93zklbU7UT16ey480drY">
-			<a href="http://actionteaser.ru">ActionTeaser.ru - тизерная реклама</a>
-	</div>
+	<ins class="sellaction_ad_params" ad_id="69fe9710ad1f61da99" ad_type="2"></ins>
 </div>

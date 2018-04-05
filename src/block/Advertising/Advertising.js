@@ -1,11 +1,14 @@
 (function() {
 	$(document).ready(function() {
-		$('body').append("<script language='Javascript'> var bid = '93zklbU7UT16ey480drY'; var sid = '10561'; var async = 1; </script>");
-		$('body').append('<script type="text/javascript" class="Script__advertising_actionteaser" src="http://v5.actionteaser.ru/news.js"></script>');
+		//$('body').append("<script async type='text/javascript' src='//recreativ.ru/rcode.773a76dcbc.js'></script>");
+	//	$('body').append("<script async src='https://c.sellaction.net/js/b.js'></script>");
 	});
 
-	$(document).on('pjax:end', function(){
-		$('body').append("<script language='Javascript'> var bid = '93zklbU7UT16ey480drY'; var sid = '10561'; var async = 1; </script>");
-		$('body').append('<script type="text/javascript" class="Script__advertising_actionteaser" src="http://v5.actionteaser.ru/news.js"></script>');
+	$(document).on('pjax:complete', function(){
+		//$('body').append("<script async type='text/javascript' src='//recreativ.ru/rcode.773a76dcbc.js'></script>");
+		setTimeout( ()=>{
+		//	$('body').append("<script async src='https://c.sellaction.net/js/b.js'></script>");
+		}, 500)
+
 	});
 }).call();

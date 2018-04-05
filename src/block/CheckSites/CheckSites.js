@@ -24,6 +24,7 @@
 					processData: false,
 					contentType: false,
 					success: function(data){
+						console.log( data );
 						if(data == "success"){
 							$(self).parents('.CheckSites__item').addClass('hidden');
 						}else{

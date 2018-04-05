@@ -65,8 +65,8 @@
 
 					<!--Рейтинг-->
 					<label class="CheckSitesForm__label">Рейтинг</label>
-					<div><?= $siteHiden['alexa_rank']; ?></div>
-					<input class="CheckSitesForm__alexa-rank" type="text" name="alexa_rank" value="<?= $siteHiden['alexa_rank']; ?>">
+					<div class="CheckSitesForm__rating"><?= $siteHiden['alexa_rank']; ?></div>
+					<input type="hidden"  name="alexa_rank" value="<?= $siteHiden['alexa_rank']; ?>">
 
 					<!--Ссылка-->
 					<label class="CheckSitesForm__label">Ссылка</label>

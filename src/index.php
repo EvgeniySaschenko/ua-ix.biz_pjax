@@ -46,11 +46,12 @@
 		<? include('view/Footer.php'); ?>
 		<? include('view/ModalLogin.php'); ?>
 	</div>
-	<link rel="stylesheet" href="/css/style.css?7">
+	<link rel="stylesheet" href="/css/style.css?11">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-	<script src="/js/app.js?12"></script>
+	<script async src='https://c.sellaction.net/js/b.js'></script>
+	<script src="/js/app.js?16"></script>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">

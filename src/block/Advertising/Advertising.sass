@@ -2,10 +2,26 @@
 	padding: 10px
 	display: flex
 	justify-content: center
-	height: 210px
+	align-items: center
 	&__left,
 	&__right
 		width: 50%
+.AdvertisingTop
+	height: 100px
+
+.AdvertisingTop
+	.sellaction_ad_params:first-child
+		margin-left: 0
+	.sellaction_ad_params
+		margin: 0 25px
+
+.AdvertisingBottom
+	.sellaction_ad_params:first-child
+		margin-left: 0
+	.sellaction_ad_params
+		margin: 0 35px
+
+
 
 @media #{$tablet}
 	.Advertising
@@ -13,6 +29,10 @@
 			display: none
 		&__right
 			width: 100%
+	.AdvertisingTop,
+	.AdvertisingBottom,
+	.AdvertisingHeader
+		display: none
 
 @media #{$phone}
 	.Advertising

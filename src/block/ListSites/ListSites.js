@@ -12,7 +12,6 @@
 				processData: false,
 				contentType: false,
 				success: function(data){
-					console.log(data)
 					if(data == "success"){
 						$(self).parents('.ListSites__item').addClass('hidden');
 					}

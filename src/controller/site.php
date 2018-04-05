@@ -78,8 +78,17 @@
 		and !empty($_POST['mail'])
 		and !empty($_SESSION['user']['id']) )
 		{
-
 			$idSite = insert__site($idSection, $idType, $idUser, $link, $linkRef, $comment, $mail, $alexaRank, $youtubeSubscriber, $youtubeBrowsing);
+
+			$to_1= 'info@ua-ix.biz';
+			$to_2= 'max@ua-ix.biz';
+			$headers = 'From: UA-IX.BIZ <dispatch@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
+			$headers .= 'Content-type: text/html; charset="utf-8"';
+			$subject= '😹'.$_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name'].' - сайт добавлен на проверку '.$link.' 🚀 Alexa Rank '.$alexaRank; 
+			$message=  '<a href="http://'.$link.'">'.$link.'</a><br>'.$subject;
+
+			mail($to_1, $subject, $message, $headers);
+			mail($to_2, $subject, $message, $headers);
 		}
 		if($idSite or $idSite === "0"){
 			echo "success";
@@ -90,7 +99,6 @@
 		}
 	}
 
-
 	if( $_SESSION['user']['permission'] == 1 ){
 		# Редактировать сайт
 		if( $_GET['action'] == 'edit' ){
@@ -99,6 +107,26 @@
 			$alexaRank = $_POST['alexa_rank'];
 
 			update__site($idSite, $idSection, $idType, $link, $linkRef, $alexaRank, $hide);
+
+			$textMail= $link.' 🚀 Alexa Rank '.$alexaRank;
+			$textMailUser= $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name'];
+
+			if($hide == 2){
+				$subject= '😿💩'.$textMailUser.' - сайт удалён '.$textMail;
+			} else if($hide == 1){
+				$subject= '😼'.$textMailUser.' - сайт отредактирован '.$textMail;
+			} else if($hide == 0){
+				$subject= '😺'.$textMailUser.' - сайт добавлен в каталог '.$textMail;
+			}
+
+			$to_1= 'info@ua-ix.biz';
+			$to_2= 'max@ua-ix.biz';
+			$headers = 'From: UA-IX.BIZ <dispatch@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
+			$headers .= 'Content-type: text/html; charset="utf-8"';
+			$message=  '<a href="http://'.$link.'">'.$link.'</a><br>'.$subject;
+
+			mail($to_1, $subject, $message, $headers);
+			mail($to_2, $subject, $message, $headers);
 
 			// Загрузка лого
 			if(!empty($_FILES['logo']['name'])){
