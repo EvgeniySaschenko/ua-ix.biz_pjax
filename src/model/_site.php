@@ -40,7 +40,7 @@
 		$sql = 'SELECT 
 							*
 						FROM sm4_site
-						WHERE link = ?';
+						WHERE link = ? AND (hide = 1 OR hide = 0)';
 		$query= $db->prepare( $sql, array(PDO::FETCH_ASSOC) );
 		$query->execute( array($site) );
 		return $query->fetchAll();
@@ -62,7 +62,7 @@
 	}
 
 	// Добавить сайт
-	function insert__site($idSection, $idType, $idUser, $link, $linkRef, $comment, $mail, $alexaRank, $youtubeSubscriber, $youtubeBrowsing){
+	function insert__site($idSection, $idType, $idUser, $link, $linkRef, $hide, $comment, $mail, $alexaRank, $youtubeSubscriber, $youtubeBrowsing){
 		global $db;
 		$sql = 'INSERT INTO sm4_site
 							(id_section,
@@ -77,13 +77,14 @@
 							youtube_subscriber,
 							youtube_browsing,
 							date_create)
-						VALUES(:id_section, :id_type, :id_user, :link, :link_ref, 1, :comment, :mail, :alexa_rank, :youtube_subscriber, :youtube_browsing, CURRENT_TIMESTAMP)';
+						VALUES(:id_section, :id_type, :id_user, :link, :link_ref, :hide, :comment, :mail, :alexa_rank, :youtube_subscriber, :youtube_browsing, CURRENT_TIMESTAMP)';
 		$query= $db->prepare($sql);
 		$query->bindParam(':id_section', $idSection);
 		$query->bindParam(':id_type', $idType);
 		$query->bindParam(':id_user', $idUser);
 		$query->bindParam(':link', $link);
 		$query->bindParam(':link_ref', $linkRef);
+		$query->bindParam(':hide', $hide);
 		$query->bindParam(':comment', $comment);
 		$query->bindParam(':mail', $mail);
 		$query->bindParam(':alexa_rank', $alexaRank);

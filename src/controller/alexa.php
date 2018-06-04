@@ -9,7 +9,7 @@
 				$alexaRank = $xml->SD->REACH->attributes()->RANK;
 			else
 				$alexaRank = 20000000;
-			update__site_alexa($site['id'], $alexaRank);;
+			update__site_alexa($site['id'], $alexaRank);
 		}
 
 ?>

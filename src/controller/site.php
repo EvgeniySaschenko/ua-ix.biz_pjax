@@ -78,7 +78,8 @@
 		and !empty($_POST['mail'])
 		and !empty($_SESSION['user']['id']) )
 		{
-			$idSite = insert__site($idSection, $idType, $idUser, $link, $linkRef, $comment, $mail, $alexaRank, $youtubeSubscriber, $youtubeBrowsing);
+			$hide= 1;
+			$idSite = insert__site($idSection, $idType, $idUser, $link, $linkRef, $hide, $comment, $mail, $alexaRank, $youtubeSubscriber, $youtubeBrowsing);
 
 			$to_1= 'info@ua-ix.biz';
 			$to_2= 'max@ua-ix.biz';
@@ -112,7 +113,7 @@
 			$textMailUser= $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name'];
 
 			if($hide == 2){
-				$subject= '😿💩'.$textMailUser.' - сайт удалён '.$textMail;
+				$subject= '😿'.$textMailUser.' - сайт удалён '.$textMail;
 			} else if($hide == 1){
 				$subject= '😼'.$textMailUser.' - сайт отредактирован '.$textMail;
 			} else if($hide == 0){

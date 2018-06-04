@@ -12,3 +12,12 @@
 
 	});
 }).call();
+
+
+// Обход блокировщика
+(function() {
+	$('.Advertising [data-src]').each(function() {
+		$(this).attr('src', $(this).attr('data-src'));
+	});
+}).call();
+

@@ -54,7 +54,7 @@
 			<? endforeach; ?>
 		</select>
 		<!--Типы-->
-		<label class="AddSite__label" for="AddSite__type">Выберете подраздел</label>
+		<label class="AddSite__label" for="AddSite__type">Выберете тип</label>
 		<select required="required" class="AddSite__select AddSite__select_type" name="id_type" id="AddSite__type">
 			<option	class="AddSite__option AddSite__option_first"></option>
 			<? foreach($typesSite as $type): ?>

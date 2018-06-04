@@ -6,14 +6,147 @@
 	&__left,
 	&__right
 		width: 50%
-.AdvertisingTop
-	height: 100px
+
+.AdvertisingHeader
+	.Laba
+		background-color: #ffd71e
+		color: #473927
+		box-shadow: 0 0 3px rgba(0,0,0,0.5)
+		&__row
+			display: flex
+			align-items: center
+			padding: 10px
+		&__col
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-start
+			&_2
+				flex-direction: column
+				text-align: center
+				align-items: center
+				margin: 0 10px
+		&__img
+			height: 55px
+		&__text
+			display: flex
+			&_promo-1
+				font-weight: bold
+			&_promo-2
+				font-size: 14px
+				color: #eb5843
+				word-spacing: 10px
+				color: #fff
+				padding-top: 8px
+				text-transform: uppercase
+				font-weight: bold
+				text-shadow: rgba(0, 0, 0, 0.3) 0 0 2px
+		&__btn
+			text-transform: uppercase
+			font-family: Arial, Helvetica, sans-serif
+			font-size: 19px
+			color: #fff
+			letter-spacing: 2px
+			background-color: #eb5843
+			padding: 11px
+			font-weight: bold
+
 
 .AdvertisingTop
-	.sellaction_ad_params:first-child
-		margin-left: 0
-	.sellaction_ad_params
-		margin: 0 25px
+	.Rozetka
+		box-shadow: 0 0 3px rgba(0,0,0,0.5)
+		background-color: #ffffff
+		&__row
+			display: flex
+			padding: 15px
+		&__col
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-start
+			&_2
+				flex-direction: column
+				align-items: center
+			&_3
+				padding-left: 10px
+				align-items: center
+		&__logo
+			height: 51px
+			width: 201px
+			background-image: url('../img/adv/rozetka.png') !important
+			display: inline-block
+		&__text
+			font-weight: bold
+			&_promo-1
+				color: #022b51
+			&_promo-2
+				color: #3a9731
+				margin-right: 10px
+				line-height: 1.5
+				font-size: 25px
+			&_promo-3
+				color: red
+				font-size: 25px
+		&__btn
+			font-family: Arial, Helvetica, sans-serif
+			font-size: 22px
+			color: #ffffff
+			background-color: #3a9731
+			padding: 15px
+			border-radius: 5px
+			font-weight: bold
+
+
+
+.AdvertisingTop
+	.Teaser
+		box-shadow: 0 0 3px rgba(0,0,0,0.1)
+		background-color: #ffffff
+		display: flex
+		justify-content: center
+		position: relative
+		&__box-logo
+			position: absolute
+			bottom: 0
+			right: 0
+			height: 20px
+		&__logo
+			height: 100%
+		&__item
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin: 10px 0
+			padding: 0 30px 20px
+			display: flex
+			flex-direction: column
+			text-align: center
+			box-sizing: border-box
+			border-right: 1px solid rgba(0,0,0,0.1)
+			flex: 1
+			&:last-child
+				border-right: 0
+		&__name
+			color: #022b51
+			font-weight: bold
+			font-size: 15px
+		&__box-img
+			height: 140px
+			width: 150px
+			display: inline-block
+			overflow: hidden
+			margin: 10px 0
+		&__img
+			height: 100%
+		&__btn
+			&_buy
+				font-family: Arial, Helvetica, sans-serif
+				font-size: 15px
+				color: #ffffff
+				background-color: #3a9731
+				padding: 8px 18px
+				border-radius: 5px
+				font-weight: bold
+
+
 
 .AdvertisingBottom
 	.sellaction_ad_params:first-child

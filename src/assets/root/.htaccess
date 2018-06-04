@@ -5,7 +5,7 @@ RewriteEngine On
   RewriteBase /
 
 	RewriteCond %{HTTP_HOST} ^react.ua-ix\.biz$ [NC]
-	RewriteRule ^$ http://react.ua-ix.biz/ru/file [R=301,L]
+	RewriteRule ^$ https://react.ua-ix.biz/ru/file [R=301,L]
 	
   RewriteCond %{QUERY_STRING} ^section=file$
   RewriteRule ^index\.php$ ru/file? [R=301,L]

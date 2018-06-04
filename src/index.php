@@ -46,7 +46,7 @@
 		<? include('view/Footer.php'); ?>
 		<? include('view/ModalLogin.php'); ?>
 	</div>
-	<link rel="stylesheet" href="/css/style.css?11">
+	<link rel="stylesheet" href="/css/style.css?21">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
@@ -85,7 +85,7 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-554b753f54e564ab"></script>
 
 	<!-- ulogin.ru -->
-	<script src="//ulogin.ru/js/ulogin.js"></script>
+	<script src="//ulogin.ru/js/ulogin.js?1"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63941418-1"></script>
