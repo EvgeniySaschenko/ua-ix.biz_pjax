@@ -1,37 +1,53 @@
 <? 
+	$TIME_CASH= 1200;
 	// Сайты раздела
 	function select__sites_section($id){
+		global $TIME_CASH;
 		global $db;
-		$sql = 'SELECT 
-							si.*,
-							ts.icon as type_icon,
-							ts.name as type_name
-						FROM sm4_site si
-						INNER JOIN sm4_type_site ts ON ts.id = si.id_type
-						INNER JOIN sm4_section se ON se.id = si.id_section
-						WHERE si.hide = 0 AND se.id_parent = ?
-						ORDER BY si.alexa_rank ASC
-						LIMIT 100';
-		$query= $db->prepare( $sql, array(PDO::FETCH_ASSOC) );
-		$query->execute( array($id) );
-		return $query->fetchAll();
+		$file= 'tmp/select__sites_section.tmp'.$id;
+
+		if( (filemtime($file) + $TIME_CASH)  <= time() ) {
+			
+			$sql = 'SELECT 
+								si.*,
+								ts.icon as type_icon,
+								ts.name as type_name
+							FROM sm4_site si
+							INNER JOIN sm4_type_site ts ON ts.id = si.id_type
+							INNER JOIN sm4_section se ON se.id = si.id_section
+							WHERE si.hide = 0 AND se.id_parent = ?
+							ORDER BY si.alexa_rank ASC
+							LIMIT 100';
+			$query= $db->prepare( $sql, array(PDO::FETCH_ASSOC) );
+			$query->execute( array($id) );
+			return $query->fetchAll();
+		} else {
+			return $arr = unserialize(file_get_contents($file));
+		}
 	}
 
 	// Сайты подраздела
 	function select__sites_subsection($id){
+		global $TIME_CASH;
 		global $db;
-		$sql = 'SELECT 
-							si.*,
-							ts.icon as type_icon,
-							ts.name as type_name
-						FROM sm4_site si
-						INNER JOIN sm4_type_site ts ON ts.id = si.id_type
-						INNER JOIN sm4_section se ON se.id = si.id_section
-						WHERE si.hide = 0 AND si.id_section = ?
-						ORDER BY si.alexa_rank ASC';
-		$query= $db->prepare( $sql, array(PDO::FETCH_ASSOC) );
-		$query->execute( array($id) );
-		return $query->fetchAll();
+		$file= 'tmp/select__sites_subsection.tmp'.$id;
+
+		if( (filemtime($file) + $TIME_CASH)  <= time() ) {
+			$sql = 'SELECT 
+								si.*,
+								ts.icon as type_icon,
+								ts.name as type_name
+							FROM sm4_site si
+							INNER JOIN sm4_type_site ts ON ts.id = si.id_type
+							INNER JOIN sm4_section se ON se.id = si.id_section
+							WHERE si.hide = 0 AND si.id_section = ?
+							ORDER BY si.alexa_rank ASC';
+			$query= $db->prepare( $sql, array(PDO::FETCH_ASSOC) );
+			$query->execute( array($id) );
+			return $query->fetchAll();
+		} else {
+			return $arr = unserialize(file_get_contents($file));
+		}
 	}
 
 	// Проверка наличия сайта в базе
